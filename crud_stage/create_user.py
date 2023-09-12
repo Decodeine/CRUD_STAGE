@@ -2,7 +2,7 @@ import requests
 import json
 
 # Define the API endpoint 
-url = 'https://hngxstage2.onrender.com/api/'  
+url = 'https://hngxstage2.onrender.com/api'  
 
 # Define the data for the new user in the format expected by your API
 data = {

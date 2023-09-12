@@ -1,7 +1,7 @@
 import requests
 
 # Define the base URL of your API
-base_url = 'http://localhost:8000/api/'
+base_url = 'https://hngxstage2.onrender.com/api'
 
 # Function to delete a user by user_id
 def delete_user(user_id):
@@ -27,7 +27,7 @@ def delete_user(user_id):
         print(f"Error: An exception occurred while making the request: {e}")
 
 if __name__ == "__main__":
-    user_id = 3 
+    user_id = 1
 
     # Call the delete_user function to delete the user
     delete_user(user_id)

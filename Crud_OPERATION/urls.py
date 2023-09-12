@@ -19,9 +19,7 @@ from django.urls import path, include
 from crud_stage.views import PersonCreateView, PersonRetrieveUpdateDeleteView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', PersonCreateView.as_view(), name='person-list-create'),
-    path('api/<str:pk_or_name>/', PersonRetrieveUpdateDeleteView.as_view(), name='person-detail'),   
+    path('admin/', admin.site.urls),   
     path('', include('crud_stage.urls')),
     
 ]

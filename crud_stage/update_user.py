@@ -2,8 +2,7 @@ import requests
 import json
 
 # Define the base URL of your API
-base_url = 'http://localhost:8000/api/'
-
+base_url ='https://hngxstage2.onrender.com/api'
 # Function to update user details
 def update_user(user_id, updated_data):
 

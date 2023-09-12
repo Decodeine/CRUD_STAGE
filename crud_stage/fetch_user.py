@@ -2,7 +2,7 @@ import requests
 
 def fetch_person_details(person_id):
     # Define the API endpoint URL with only the person ID
-    url = f'http://localhost:8000/api/{person_id}/'
+    url = f'https://hngxstage2.onrender.com/api/{person_id}/'
 
     try:
         # Send a GET request to the API
