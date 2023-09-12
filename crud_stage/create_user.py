@@ -1,8 +1,8 @@
 import requests
 import json
 
-# Define the API endpoint based on your updated views.py
-url = 'http://localhost:8000/api/'  # Update the endpoint as needed
+# Define the API endpoint 
+url = 'http://localhost:8000/api/'  
 
 # Define the data for the new user in the format expected by your API
 data = {
