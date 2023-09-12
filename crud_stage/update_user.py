@@ -32,9 +32,9 @@ def update_user(user_id, updated_data):
         print(f"Error: An exception occurred while making the request: {e}")
 
 if __name__ == "__main__":
-    user_id = 3  # Replace with the ID of the user you want to update
+    user_id = 4  # Replace with the ID of the user you want to update
     updated_data = {
-        "name": "Ayra Starr",
+        "name": "Nana whemzy",
         
         # Add other fields as needed
     }

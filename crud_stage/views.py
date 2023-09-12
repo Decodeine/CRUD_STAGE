@@ -3,12 +3,14 @@ from rest_framework.response import Response
 from .models import Person
 from .serializers import PersonSerializer
 from django_filters import rest_framework as filters
+#from rest_framework.permissions import IsAuthenticated
 
 
 class PersonCreateView(generics.CreateAPIView):
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
-    
+    #permission_classes = [IsAuthenticated]
+
 class PersonFilter(filters.FilterSet):
     name = filters.CharFilter(lookup_expr='icontains')  # Case-insensitive partial match
 

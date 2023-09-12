@@ -6,7 +6,7 @@ url = 'http://localhost:8000/api/'
 
 # Define the data for the new user in the format expected by your API
 data = {
-    "name": "Essien",
+    "name": "Junior",
 }
 
 # Send a POST request with JSON data and the appropriate headers
