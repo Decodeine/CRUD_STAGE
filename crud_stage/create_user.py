@@ -2,11 +2,11 @@ import requests
 import json
 
 # Define the API endpoint 
-url = 'http://localhost:8000/api/'  
+url = 'https://hngxstage2.onrender.com/api/'  
 
 # Define the data for the new user in the format expected by your API
 data = {
-    "name": "Junior",
+    "name": "Lokosa",
 }
 
 # Send a POST request with JSON data and the appropriate headers
