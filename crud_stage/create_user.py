@@ -6,7 +6,7 @@ url = 'https://hngxstage2.onrender.com/api'
 
 # Define the data for the new user in the format expected by your API
 data = {
-    "name": "Lokosa",
+    "name": "Janet",
 }
 
 # Send a POST request with JSON data and the appropriate headers
@@ -18,6 +18,7 @@ try:
     # Check the response
     if response.status_code == 201:
         print("User created successfully")
+        print(response.content)
     else:
         print("Error:", response.status_code)
         print(response.content)

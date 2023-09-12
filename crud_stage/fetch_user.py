@@ -26,5 +26,5 @@ def fetch_person_details(person_id):
         print(f"Error: An exception occurred while making the request: {e}")
 
 if __name__ == "__main__":
-    person_id = 1  # Replace with the ID of the person you want to fetch
+    person_id = 4 # Replace with the ID of the person you want to fetch
     fetch_person_details(person_id)
