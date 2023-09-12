@@ -15,9 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include  # Don't forget to import include
+from django.urls import path, include  
+from crud_stage.views import PersonCreateView, PersonRetrieveUpdateDeleteView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('crud_stage.urls')),  # Include your app's URLs
+    path('admin/', admin.site.urls),   
+    path('api/', include('crud_stage.urls')),
+    path('', PersonCreateView.as_view(), name='person-list-create'),  # Use PersonCreateView as the root view
+    path('<str:pk_or_name>/', PersonRetrieveUpdateDeleteView.as_view(), name='person-detail'),
 ]
+
+
+
