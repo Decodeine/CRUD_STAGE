@@ -347,4 +347,37 @@ Thank you for using the `Crud_OPERATION` API. Your feedback and contributions ar
 
 ---
 
+UML DIAGRAM
++------------------------------------+
+|            CRUD_OPERATION          |
++------------------------------------+
+|                                    |
+| - Person                          |
+|                                    |
++------------------------------------+
+|             Person                 |
++------------------------------------+
+| - id: int (PK)                    |
+| - name: str                        |
+|                                    |
++------------------------------------+
+|           Serializers              |
++------------------------------------+
+| - PersonSerializer                |
+|                                    |
++------------------------------------+
+|             Views                  |
++------------------------------------+
+| - PersonCreateView                |
+| - PersonRetrieveUpdateDeleteView  |
+|                                    |
++------------------------------------+
+|     Django REST Framework          |
++------------------------------------+
+| - API Views                        |
+| - Serializers                      |
+| - Permissions                      |
+| - Filters                          |
+|                                    |
++------------------------------------+
 

@@ -27,7 +27,7 @@ def delete_user(user_id):
         print(f"Error: An exception occurred while making the request: {e}")
 
 if __name__ == "__main__":
-    user_id = 5
+    user_id = 4
 
     # Call the delete_user function to delete the user
     delete_user(user_id)
