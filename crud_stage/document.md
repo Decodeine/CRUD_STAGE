@@ -18,13 +18,13 @@ Welcome to the `Crud_OPERATION` API documentation. This API is designed to perfo
   - Retrieve User Details
   - Update User Information
   - Delete User
-- Examples
+- Examples Usage
 - Error Handling
 - Contact Information
 - FAQ
 - Conclusion
 
-# Prerequisites
+* Prerequisites
 
 Before using the `Crud_OPERATION` API, ensure the following prerequisites are met:
 
@@ -33,7 +33,7 @@ Before using the `Crud_OPERATION` API, ensure the following prerequisites are me
 - Django Rest Framework
 - Database setup
 
-## Getting Started
+* Getting Started
 
 ### Installation
 
@@ -42,7 +42,7 @@ To install and run the `Crud_OPERATION` API locally, follow these steps:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/yourusername/crud_operation.git
+   git clone https://github.com/Decodeine/CRUD_STAGE/.git
    ```
 
 2. Change directory:
@@ -83,13 +83,34 @@ The following endpoints are available in the `Crud_OPERATION` API:
 #### Request
 
 - **Parameters**: None
-- **Request Body**:
+- **Sample usage**:
+import requests
+import json
 
-  ```json
-  {
-    "name": "John Doe",
-    // Add other user data here
-  }
+# Define the API endpoint 
+url = 'https://hngxstage2.onrender.com/api'  
+
+# Define the data for the new user in the format expected by your API
+data = {
+    "name": "Janet",
+}
+
+# Send a POST request with JSON data and the appropriate headers
+headers = {'Content-Type': 'application/json'}
+
+try:
+    response = requests.post(url, data=json.dumps(data), headers=headers)
+
+    # Check the response
+    if response.status_code == 201:
+        print("User created successfully")
+        print(response.content)
+    else:
+        print("Error:", response.status_code)
+        print(response.content)
+except requests.exceptions.RequestException as e:
+    print("Error making the request:", str(e))
+
   ```
 
 #### Response
@@ -105,6 +126,7 @@ The following endpoints are available in the `Crud_OPERATION` API:
   }
   ```
 
+
 2.Retrieve User Details
 
 - **Description**: Retrieve user details by ID or name.
@@ -117,7 +139,40 @@ The following endpoints are available in the `Crud_OPERATION` API:
 - **Parameters**:
   - `pk_or_name`: User ID or name
 
-- **Example URL**: ` https://hngxstage2.onrender.com/api/1/` or ‘https://hngxstage2.onrender.com/api /johndoe/`
+- **Example URL**: ` https://hngxstage2.onrender.com/api/1/` or ‘https://hngxstage2.onrender.com/api /johndoe/`.
+
+**Sample Usage**
+import requests
+
+def fetch_person_details(person_id):
+    # Define the API endpoint URL with only the person ID
+    url = f'https://hngxstage2.onrender.com/api/{person_id}/'
+
+    try:
+        # Send a GET request to the API
+        response = requests.get(url)
+
+        # Check if the request was successful (HTTP status code 200)
+        if response.status_code == 200:
+            # Parse the JSON response
+            person_data = response.json()
+
+            # Display the person details
+            print("Person Details:")
+            print(f"Name: {person_data.get('name', 'N/A')}")
+            print(f"Age: {person_data.get('age', 'N/A')}")
+            print(f"Sex: {person_data.get('Sex', 'N/A')}")  # 'Sex' with capital 'S'
+
+        else:
+            print(f"Error: Failed to fetch person details (HTTP Status Code {response.status_code})")
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error: An exception occurred while making the request: {e}")
+
+if __name__ == "__main__":
+    person_id = 4 # Replace with the ID of the person you want to fetch
+    fetch_person_details(person_id)
+...............
 
 #### Response
 
@@ -138,12 +193,56 @@ The following endpoints are available in the `Crud_OPERATION` API:
 - **Description**: Update user details by ID or name.
 - **HTTP Method**: PUT
 - **URL**: ` https://hngxstage2.onrender.com/api /<str:pk_or_name>/`
+ **Sample Usage**
+ import requests
+import json
+
+# Define the base URL of your API
+base_url ='https://hngxstage2.onrender.com/api/'
+# Function to update user details
+def update_user(user_id, updated_data):
+
+    # Define the endpoint for updating user details
+    endpoint = f'{base_url}{user_id}/'
+
+    try:
+        # Send a PUT request with updated data
+        response = requests.put(endpoint, data=json.dumps(updated_data), headers={'Content-Type': 'application/json'})
+
+        # Check the response
+        if response.status_code == 200:
+            print("User details updated successfully")
+        elif response.status_code == 404:
+            print("User not found")
+        elif response.status_code == 400:
+            print("Bad request - validation error")
+            print(response.json())  # Print validation error details
+        elif response.status_code == 500:
+            print("Internal Server Error")
+        else:
+            print(f"Error: {response.status_code}")
+            print(response.content)
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error: An exception occurred while making the request: {e}")
+
+if __name__ == "__main__":
+    user_id = 4  # Replace with the ID of the user you want to update
+    updated_data = {
+        "name": "Nana whemzy",
+        
+        # Add other fields as needed
+    }
+
+    update_user(user_id, updated_data)
+................
 
 
 #### Request
 
 - **Parameters**:
   - `pk_or_name`: User ID or name
+
 - **Request Body**:
 
   ```json
@@ -164,7 +263,7 @@ The following endpoints are available in the `Crud_OPERATION` API:
 { User details updated succesfully }
   ```
 
-### Delete User
+4. Delete User
 
 - **Description**: Delete a user by ID or name.
 - **HTTP Method**: DELETE
@@ -176,11 +275,47 @@ The following endpoints are available in the `Crud_OPERATION` API:
 - **Parameters**:
   - `pk_or_name`: User ID or name
 
+  **Sample Usage**
+  import requests
+
+# Define the base URL of your API
+base_url = 'https://hngxstage2.onrender.com/api/'
+
+# Function to delete a user by user_id
+def delete_user(user_id):
+    # Define the endpoint for deleting a user
+    endpoint = f'{base_url}{user_id}/'
+
+    try:
+        # Send a DELETE request to delete the user
+        response = requests.delete(endpoint)
+
+        # Check the response
+        if response.status_code == 204:
+            print("User deleted successfully")
+        elif response.status_code == 404:
+            print("User not found")
+        elif response.status_code == 500:
+            print("Internal Server Error")
+        else:
+            print(f"Error: {response.status_code}")
+            print(response.content)
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error: An exception occurred while making the request: {e}")
+
+if __name__ == "__main__":
+    user_id = 5
+
+    # Call the delete_user function to delete the user
+    delete_user(user_id)
+..........................
+
 #### Response
 
 - **Status Codes**: 204 No Content, 404 Not Found
 
-.
+..............
 
 ## Error Handling
 Possible Error Codes and Meanings
