@@ -7,10 +7,10 @@ Key Features:
 1.	CRUD Functionality: The core purpose of this project is to provide a comprehensive set of tools for performing CRUD operations on data entities. Whether you're managing user profiles, or any other structured data, "crud_operation" simplifies the process.
 2.	Extensible Architecture: Built on the Django framework, the project follows best practices for modular and maintainable code. You can easily extend and customize it to suit your specific data models and business requirements.
 3.	RESTful API: "crud_operation" includes a RESTful API that enables seamless integration with other applications or services. 
-4.	User Authentication: The project includes user authentication features, ensuring that data access and management are secure. You can easily configure and customize authentication methods to suit your needs.
-5.	Database Flexibility: It supports various database backends, including PostgreSQL, MySQL, SQLite, and more, giving you the flexibility to choose the database that best suits your project's needs.
-6.	Deployment-Ready: The project is designed with deployment in mind. You can easily deploy it to a variety of hosting platforms, making it suitable for both small-scale projects and enterprise-level applications.
-7.	Community Support: The Django community is vast and active, providing a wealth of resources, plugins, and extensions that can be integrated with your project as needed.
+
+4.	Database Flexibility: It supports various database backends, including PostgreSQL, MySQL, SQLite, and more, giving you the flexibility to choose the database that best suits your project's needs.
+5.	Deployment-Ready: The project is designed with deployment in mind. You can easily deploy it to a variety of hosting platforms, making it suitable for both small-scale projects and enterprise-level applications.
+6.	Community Support: The Django community is vast and active, providing a wealth of resources, plugins, and extensions that can be integrated with your project as needed.
 
 Use Cases:
 
