@@ -1,16 +1,14 @@
 # CRUD_STAGE
-HNGx Stage 2
-crud_operation
 Overview:
 The "crud_operation" is a flexible Django-based web application designed to facilitate Create, Read, Update, and Delete (CRUD) operations on various data entities. It serves as a robust foundation for building web applications that require efficient management of structured data.
 Key Features:
-1.	CRUD Functionality: The core purpose of this project is to provide a comprehensive set of tools for performing CRUD operations on data entities. Whether you're managing user profiles, or any other structured data, "crud_operation" simplifies the process.
+1.	CRUD Functionality: The core purpose of this project is to provide a comprehensive set of tools for performing CRUD operations on data entities. 
 2.	Extensible Architecture: Built on the Django framework, the project follows best practices for modular and maintainable code. You can easily extend and customize it to suit your specific data models and business requirements.
 3.	RESTful API: "crud_operation" includes a RESTful API that enables seamless integration with other applications or services. 
 
 4.	Database Flexibility: It supports various database backends, including PostgreSQL, MySQL, SQLite, and more, giving you the flexibility to choose the database that best suits your project's needs.
 5.	Deployment-Ready: The project is designed with deployment in mind. You can easily deploy it to a variety of hosting platforms, making it suitable for both small-scale projects and enterprise-level applications.
-6.	Community Support: The Django community is vast and active, providing a wealth of resources, plugins, and extensions that can be integrated with your project as needed.
+6.	Community Support: The Django community is vast and active.
 
 Use Cases:
 
